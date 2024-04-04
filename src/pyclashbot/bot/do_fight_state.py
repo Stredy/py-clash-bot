@@ -208,26 +208,6 @@ def check_if_on_path_of_legends_mode(vm_index):
     return True
 
 
-def check_if_on_path_of_legends_mode(vm_index):
-    iar = numpy.asarray(screenshot(vm_index))
-    pixels = [
-        iar[415][392],
-        iar[386][370],
-        iar[410][387],
-    ]
-    colors = [
-        [179, 47, 92],
-        [170, 34, 80],
-        [181, 48, 92],
-    ]
-
-    for i, p in enumerate(pixels):
-        if not pixel_is_equal(p, colors[i], tol=25):
-            return False
-
-    return True
-
-
 def start_2v2_fight_state(vm_index, logger: Logger) -> Literal["restart", "2v2_fight"]:
     """method to handle starting a 2v2 fight"""
 
